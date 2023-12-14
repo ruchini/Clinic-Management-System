@@ -18,8 +18,9 @@ class PrescriptionController extends Controller
 
     public function index()
     {
+        $patients = Patient::orderBy('name', 'asc')->get();
         $prescriptions = $this->prescriptionService->getAllPrescriptions();
-        return view('prescriptions.index', compact('prescriptions'));
+        return view('prescriptions.index', compact('prescriptions', 'patients'));
     }
 
     public function show($id)

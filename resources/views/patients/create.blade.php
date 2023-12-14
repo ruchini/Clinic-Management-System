@@ -3,32 +3,63 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Create New Patient</h2>
+    <div class="container">
+        <h2>Create New Patient</h2>
 
-    <form action="{{ route('patients.store') }}" method="POST">
-        @csrf
-        <label for="name">Name:</label>
-        <input type="text" name="name" required> <br>
+        <!-- Patient creation form with Bootstrap styling -->
+        <form action="{{ route('patients.store') }}" method="POST">
+            @csrf
 
-        <label for="birthday">Birthday:</label>
-        <input type="date" name="birthday" required> <br>
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="name" class="form-control form-control-sm" required>
+                </div>
+            </div>
 
-        <label for="contact_no">Phone:</label>
-        <input type="text" name="contact_no" required> <br>
+            <div class="form-group row">
+                <label for="birthday" class="col-sm-2 col-form-label">Birthday:</label>
+                <div class="col-sm-4">
+                    <input type="date" name="birthday" class="form-control form-control-sm" required>
+                </div>
+            </div>
 
-        <label for="address">Address:</label>
-        <input type="text" name="address" required> <br>
+            <div class="form-group row">
+                <label for="contact_no" class="col-sm-2 col-form-label">Phone:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="contact_no" class="form-control form-control-sm" required>
+                </div>
+            </div>
 
-        <label for="nic">NIC:</label>
-        <input type="text" name="nic"> <br>
+            <div class="form-group row">
+                <label for="address" class="col-sm-2 col-form-label">Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="address" class="form-control form-control-sm" required>
+                </div>
+            </div>
 
-        <label for="notes">Special Note:</label>
-        <input type="text" name="notes"> <br>
+            <div class="form-group row">
+                <label for="nic" class="col-sm-2 col-form-label">NIC:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="nic" class="form-control form-control-sm">
+                </div>
+            </div>
 
-        <!-- Add other patient fields as needed -->
+            <div class="form-group row">
+                <label for="notes" class="col-sm-2 col-form-label">Special Note:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="notes" class="form-control form-control-sm">
+                </div>
+            </div>
 
-        <button type="submit">Create Patient</button>
-    </form>
+            <!-- Add other patient fields as needed -->
 
-    <a href="{{ route('patients.index') }}">Back to Patients List</a>
+            <div class="form-group row">
+                <div class="col-sm-4 offset-sm-2">
+                    <button type="submit" class="btn btn-success btn-sm">Create Patient</button>
+                    <a href="{{ route('patients.index') }}" class="btn btn-primary btn-sm mt-2">Back to Patients List</a>
+                </div>
+            </div>
+        </form>
+    </div>
 @endsection
