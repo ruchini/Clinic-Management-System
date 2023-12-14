@@ -73,6 +73,10 @@ Make sure you have the following software installed before setting up the Clinic
 
 ## Usage
 
-    - Log in with your credentials or create a new account.
+    - Log in with default credentials.
+      there is one user in the system and user details are below. This user will create in the db, when migrate the db.
+      user name: john
+      email:john@example.com
+      password: 1234567
     - Navigate through the dashboard to access different modules.
     - Manage patients, prescriptions, bill payments, and view revenue reports.
